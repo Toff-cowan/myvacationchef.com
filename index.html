@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Vacation Chef - Home</title>
+    <meta name="description" content="Welcome to My Vacation Chef, your go-to destination for personalized meal planning and culinary experiences during your vacation. Vacation Chef in Montego Bay, Jamaica. Chef Camille can be booked for your entire stay on the island.">
+    <link rel="stylesheet" href="index.css">
+    <link rel="icon" href="Images/My vacation chef logo 3 .jpg" type="image/jpeg">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <video autoplay muted loop id="bg-video">
+        <source src="Images\pot2.mp4" type="video/mp4">
+    </video>
+    <nav>
+        <div class="logo">
+            <img src="Images/My vacation chef logo 3 .jpg" alt="My Vacation Chef Logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">Camille's Kitchen</a></li>
+            <li><a href="Menus.html">Menus</a></li>
+            <li><a href="contact.html">Contact Me</a></li>
+            <li><a href="Blog.html" class="btn">Blog</a></li>
+        </ul>
+    </nav>
+<!-- Landing Page Slider Section -->
+    <section class="top-feature-slider">
+    <div class="feature-slide">
+        <a href="Menus.html">
+            <img src="Images\menu.jpg" alt="Menus">
+            <div class="overlay">
+                <h3>Explore Menus</h3>
+            </div>
+        </a>
+    </div>
+    <div class="feature-slide">
+        <a href="blog.html">
+            <img src="Images\blog.jpg" alt="Blog">
+            <div class="overlay">
+                <h3>Read Our Blog</h3>
+            </div>
+        </a>
+    </div>
+    <div class="feature-slide">
+        <a href="https://682186.17hats.com/p#/lcf/nntbkgssxgpptpgccfxgwthttwtcgnfn">
+            <img src="Images\reservation.jpg" alt="Reservation">
+            <div class="overlay">
+                <h3>Make a Reservation</h3>
+            </div>
+        </a>
+    </div>
+</section>
+<div style="height: 60px; background: #305F80; width: 100%; padding: 0%; "></div>
+    <!-- Intro Section -->
+     <section class="intro-section">
+        <h1 class="animate-float">Welcome to Your Culinary Escape</h1>
+        <p class="animate-float">Chef Camille brings you an unforgettable plant-forward culinary experience in Montego Bay, Jamaica. Enjoy private dinners, personal chef services, and small-bite parties with a touch of island flavor.</p>
+    </section>
+
+    <section class="gallery-slider">
+        <h2 class="animate-float">Culinary Gallery</h2>
+        <div class="slider-container" class="animate-float">
+            <div class="slider" id="slider">
+                <div class="slide" ><img src="Images/Fried-Shrimp-Grits.jpg" alt="Food 1"></div>
+                <div class="slide"><img src="Images/DSC_6250.jpg" alt="Food 2"></div>
+                <div class="slide"><img src="Images/DSC_6354.jpg" alt="Food 3"></div>
+                <div class="slide"><img src="Images\meatball-sauce-1.jpg" alt="Food 4"></div>
+                <div class="slide"><img src="Images\food1.jpg" alt="Food 5"></div>
+            </div>
+            <div class="slider-nav">
+                <button id="prev-slide"><i class="fas fa-chevron-left"></i></button>
+                <button id="next-slide"><i class="fas fa-chevron-right"></i></button>
+            </div>
+            <div class="slider-dots"></div>
+        </div>
+    </section>
+    <section class="reservation">
+        <h2>Book Your Culinary Experience</h2>
+        <p>Let Chef Camille transform your vacation with unforgettable meals tailored just for you.</p>
+        <a href="https://682186.17hats.com/p#/lcf/nntbkgssxgpptpgccfxgwthttwtcgnfn" class="btn">Make a Reservation</a>
+    </section>
+
+    <footer style="background: #f4f4f4; color: #333; padding: 2rem 1rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 200px;">
+        <img src="Images/My vacation chef logo 3 .jpg" alt="Logo" style="height: 60px;">
+    </div>
+    <p>Serving Montego Bay, Rosehall, Unity Hall, Ironshore, Cornwall Gardens,<br>Westgate Hills,Coral Gardens, Freeport, Montego West Village</p>
+    <div style="flex: 2; text-align: right; min-width: 250px;">
+        <p style="margin: 0;"><strong>Contact:</strong> myvacationchefmontegobay@gmail.com</p>
+        <p style="margin: 0;">Montego Bay, Jamaica</p>
+    </div>
+</footer>
+</body>
+
+    <script>
+        const slider = document.getElementById('slider');
+        const slides = slider.querySelectorAll('.slide');
+        const prevBtn = document.getElementById('prev-slide');
+        const nextBtn = document.getElementById('next-slide');
+        const dotsContainer = document.querySelector('.slider-dots');
+        let currentIndex = 0;
+        let autoScrollInterval;
+        const slideInterval = 6000;
+
+        slides.forEach((_, index) => {
+            const dot = document.createElement('span');
+            dot.classList.add('dot');
+            if (index === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => goToSlide(index));
+            dotsContainer.appendChild(dot);
+        });
+
+        const dots = document.querySelectorAll('.dot');
+
+        function updateSlider() {
+            slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+            dots.forEach((dot, index) => dot.classList.toggle('active', index === currentIndex));
+        }
+
+        function goToSlide(index) {
+            currentIndex = index;
+            updateSlider();
+            resetAutoScroll();
+        }
+
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % slides.length;
+            updateSlider();
+        }
+
+        function prevSlide() {
+            currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+            updateSlider();
+        }
+
+        function startAutoScroll() {
+            autoScrollInterval = setInterval(nextSlide, slideInterval);
+        }
+
+        function resetAutoScroll() {
+            clearInterval(autoScrollInterval);
+            startAutoScroll();
+        }
+
+        nextBtn.addEventListener('click', () => {
+            nextSlide();
+            resetAutoScroll();
+        });
+
+        prevBtn.addEventListener('click', () => {
+            prevSlide();
+            resetAutoScroll();
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight') {
+                nextSlide();
+                resetAutoScroll();
+            } else if (e.key === 'ArrowLeft') {
+                prevSlide();
+                resetAutoScroll();
+            }
+        });
+
+        slider.addEventListener('mouseenter', () => clearInterval(autoScrollInterval));
+        slider.addEventListener('mouseleave', () => startAutoScroll());
+
+        updateSlider();
+        startAutoScroll();
+
+        // Add animation effect to the gallery images
+    document.addEventListener('DOMContentLoaded', () => {
+    const animatedItems = document.querySelectorAll('.animate-float, .animate-pop');
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target); // animate only once
+            }
+        });
+    }, { threshold: 0.1 });
+
+    animatedItems.forEach(item => observer.observe(item));
+});
+    </script>
+</html
