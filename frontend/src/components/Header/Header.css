@@ -1,0 +1,19 @@
+
+.header-contents{
+    z-index: -100;
+    padding-top: 200px;
+    padding-bottom: 200px;
+    position: relative;
+    text-align: center;
+    font-size: 100px;
+    margin: 2em ;
+    opacity: 100;
+    /*transition: opacity 2.5s ease-in-out;*/
+}
+.header-contents h1 {
+      color: #000000;
+    }
+.header-contents p {
+      color: #050303;
+      font-size: 40px;
+    }
