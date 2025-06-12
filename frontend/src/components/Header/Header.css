@@ -1,19 +1,47 @@
 
 .header-contents{
-    z-index: -100;
-    padding-top: 200px;
+    z-index: 1;
+    padding-top: 100px;
     padding-bottom: 200px;
     position: relative;
     text-align: center;
     font-size: 100px;
     margin: 2em ;
-    opacity: 100;
-    /*transition: opacity 2.5s ease-in-out;*/
+    opacity: 0;
+    transition: opacity 2s ease-in-out;
+    color: white;
 }
-.header-contents h1 {
-      color: #000000;
-    }
+.header-contents.fade-in {
+    opacity: 1;
+}
 .header-contents p {
-      color: #050303;
+
       font-size: 40px;
     }
+.header .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 1em;
+    color: #ffffff;
+}
+.header .social-links a {
+    color: #ffffff;
+    font-size: 60px;
+    text-decoration: none;
+    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+.header .social-links a:hover {
+      color: #ffd700;
+      transform: scale(1.2);
+}
+#bg-video {
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -2;
+}
