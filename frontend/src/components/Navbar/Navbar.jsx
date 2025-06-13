@@ -48,18 +48,10 @@ const Navbar = () => {
       </ul>
 
       {flyoutVisible && (
-       <div
-  className="flyout-menu"
-  ref={flyoutRef}
-  style={{
-    position: 'absolute',
-    top: menuBtnRef.current?.getBoundingClientRect().bottom + window.scrollY + 10,
-    left: menuBtnRef.current?.getBoundingClientRect().left,
-  }}
->
-  <Dropdown />
-</div>
-      )}
+  <div className="flyout-menu open" ref={flyoutRef}>
+    <Dropdown />
+  </div>
+)}
     </div>
   );
 };

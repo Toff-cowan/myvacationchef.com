@@ -1,57 +1,163 @@
+.flyout-menu {
+  width: 100%;
+  position: fixed;
+  top: 100px; /* Adjust if your navbar height changes */
+  left: 0;
+  background-color: white;
+  z-index: 1000;
+  transform: translateY(-40px); /* Start slightly above */
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.8s cubic-bezier(0.4,0,0.2,1), opacity 0.4s cubic-bezier(0.4,0,0.2,1);
+}
+
+.flyout-menu.open {
+  transform: translateY(0); /* Float down to position */
+  opacity: 1;
+  pointer-events: auto;
+}
 
 .menu-nav {
   display: flex;
+  padding: 40px 60px;
+  gap: 40px;
+  flex-wrap: nowrap;
   align-items: flex-start;
-  flex-direction: row-reverse; /* 👈 reverses order: logo will go right */
-  background-color: white;
-  border-radius: 1px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-  padding: 20px;
+  justify-content: space-between;
+  animation: menuContentFade 0.5s ease forwards;
+  animation-delay: 0.1s;
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.menu-left-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
   gap: 20px;
-  position: relative;
-  top: 100%;
-  z-index: 999;
-  min-width: 320px;
 }
 
-.menu-right {
-  flex-shrink: 0;
+.preview-row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
-.menu-logo {
-  height: 200px;
-  width: 200px;
-  border-radius: 50%;
-  object-fit: contain;
+.preview-card {
+  flex: 1;
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
-.menu-left {
+.preview-card img {
+  width: 100%;
+  border-radius: 8px;
+  height: 140px;
+  object-fit: cover;
+}
+
+.preview-text h4 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.preview-text p {
+  margin: 0;
+  font-size: 14px;
+  color: #666;
+}
+
+.menu-divider {
+  width: 1px;
+  background-color: rgba(0, 0, 0, 0.1);
+  height: 100%;
+}
+
+.menu-right-panel {
+  flex: 1;
   list-style: none;
   margin: 0;
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 15px;
-  flex: 1;
+  gap: 20px;
 }
 
-.menu-left li {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 10px 14px;
+.menu-right-panel li {
   font-size: 20px;
   font-weight: 500;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.3s ease;
 }
 
-.menu-left li:hover {
-  background-color: transparent;
-  border-bottom: 2px solid #d49800;
+.menu-right-panel li a {
+  text-decoration: none;
+  color: #333;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+}
+
+.menu-right-panel li:hover {
+  border-bottom: 3px solid #d49800;
+  
+  
 }
 
 .menu-icon {
-  font-size: 18px;
   color: #d49800;
+  font-size: 20px;
+}
+
+.menu-ribbon {
+  width: 100%;
+  height: 30px;
+  background-color: #007BFF;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .menu-nav {
+    flex-direction: column;
+    gap: 30px;
+    padding: 30px 20px;
+  }
+
+  .menu-divider {
+    display: none;
+  }
+
+  .menu-left-panel,
+  .menu-right-panel {
+    width: 100%;
+  }
+
+  .preview-row {
+    flex-direction: column;
+  }
+
+  .preview-card img {
+    height: 120px;
+  }
+
+  .menu-right-panel li {
+    font-size: 18px;
+  }
+}
+
+
+/* Animation for menu content fade-in */
+@keyframes menuContentFade {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

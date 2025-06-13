@@ -17,6 +17,7 @@ import logo_main from './Myvacationcheflogo_3 .jpg';
 import reservation from './reservation.jpg';
 import serving from './serving.jpg';
 import img20211017 from './20211017_010638.jpg';
+import spices from './spices.png';
 
 // Videos & GIFs
 import cookingVideo from './cooking.mp4';
@@ -51,5 +52,6 @@ export const assets={
   potGif,
   pot2Video,
   servingVideo,
-  flameVideo
+  flameVideo,
+  spices
 };
