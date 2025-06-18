@@ -16,6 +16,7 @@
   padding: 10px 20px;
   font-size: 25px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  transition: top 1s; /* Smooth transition */
 }
 
 .navbar::after {
@@ -29,10 +30,14 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+.hide-navbar {
+  opacity: 0;
+  pointer-events: none; /* Prevents clicking when invisible */
+}
 /* Logo */
 .logo {
-  height: 80px;
-  width: 80px;
+  height: 60px;
+  width: 60px;
   border-radius: 50%;
 }
 

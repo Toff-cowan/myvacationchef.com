@@ -26,7 +26,7 @@ const Header = () => {
       <div className="header-contents" ref={headerRef}>
         <h1>Welcome</h1>
         <p>to Chef Camille's Official Website</p>
-        <div class="social-links">
+        <div className="social-links">
         <a href="https://www.facebook.com/share/1Bwq5Xa93Q/" target="_blank" rel="noopener noreferrer"><FaFacebookF /></a>
         <a href="https://www.instagram.com/myvacationchef?utm_source=qr&igsh=MWVib295amxyNzd6bg==" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
         <a href="https://www.tiktok.com/@myvacationchef?_t=8na0t7zhv7N&_r=1" target="_blank" rel="noopener noreferrer"><FaTiktok /></a>
