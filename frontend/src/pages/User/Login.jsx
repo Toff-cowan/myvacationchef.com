@@ -8,16 +8,8 @@ const Login = () => {
   return (
     <div className="auth-container">
       {/* Video Background */}
-      <video 
-        autoPlay 
-        loop 
-        muted 
-        playsInline 
-        className="auth-video"
-      >
-        <source src={assets.flameVideo} type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
+      <video autoPlay loop muted playsInline className="auth-video">
+        <source src={assets.flameVideo} type="video/mp4" /></video>
       <div className="video-overlay"></div>
 
       {/* Logo Overlay */}

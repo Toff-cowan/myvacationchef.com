@@ -26,12 +26,12 @@ const Navbar = () => {
       }
     };
     
-
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [flyoutVisible]);
     const navbarRef = useRef(null);
 
+    
   useEffect(() => {
     let prevScrollPos = window.pageYOffset;
 
