@@ -53,7 +53,7 @@ const Navbar = () => {
 
   return (
     <div className="navbar" ref={navbarRef}>
-      <Link to="/"><img src={assets.logo_main} alt="My Vacation Chef Logo" className="logo" /></Link>
+      <Link to="/"><img src={assets.logo_4} alt="My Vacation Chef Logo" className="logo" /></Link>
 
       <ul className="nav-links">
        <Link to="/"><li onClick={() => setMenu("home")} className={menu==="home"?"active":""}>Home</li></Link>

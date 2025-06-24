@@ -14,6 +14,7 @@ import menu from './menu.jpg';
 import logo1 from './Myvacationcheflogo_1 .jpg';
 import logo2 from './Myvacationcheflogo_2 .jpg';
 import logo_main from './Myvacationcheflogo_3 .jpg';
+import logo_4 from './logo_4.jpg';
 import reservation from './reservation.jpg';
 import serving from './serving.jpg';
 import img20211017 from './20211017_010638.jpg';
@@ -44,6 +45,7 @@ export const assets={
   logo1,
   logo2,
   logo_main,
+  logo_4,
   reservation,
   serving,
   img20211017,

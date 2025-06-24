@@ -25,7 +25,7 @@ const Footer = () => {
        
         <div className="footer-main">
           <div className="footer-brand">
-            <img src={assets.logo_main} alt="My Vacation Chef" className="footer-logo" />
+            <img src={assets.logo_4} alt="My Vacation Chef" className="footer-logo" />
             <p className="footer-tagline">Creating memorable dining experiences in your vacation home</p>  
           </div>
 
